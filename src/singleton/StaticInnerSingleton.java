@@ -6,16 +6,16 @@ package singleton;
  * @Description: 静态内部类单例模式
  * 这种方式：线程安全，调用效率高，并且实现了延时加载！
  */
-public class SingletonDemo4 {
+public class StaticInnerSingleton {
 
     private static class SingletonClassInstance{
-          private static final SingletonDemo4 instance=new SingletonDemo4();
+          private static final StaticInnerSingleton instance=new StaticInnerSingleton();
     }
 
-    public SingletonDemo4() {
+    public StaticInnerSingleton() {
     }
 
-    public static SingletonDemo4 getInstance(){
+    public static StaticInnerSingleton getInstance(){
         return SingletonClassInstance.instance;
     }
 }
