@@ -7,6 +7,7 @@ package singleton;
  */
 public class TestSingleton {
     public static void main(String[] args) {
+        System.out.println(LazySingleton.getInstance()==LazySingleton.getInstance());
         System.out.println(EnumSingleton.INSTANCE== EnumSingleton.INSTANCE);
         EnumSingleton.INSTANCE.singletonOperation();
     }
