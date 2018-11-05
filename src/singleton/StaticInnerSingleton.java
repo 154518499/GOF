@@ -12,7 +12,7 @@ public class StaticInnerSingleton {
           private static final StaticInnerSingleton instance=new StaticInnerSingleton();
     }
 
-    public StaticInnerSingleton() {
+    private StaticInnerSingleton() {
     }
 
     public static StaticInnerSingleton getInstance(){

@@ -9,7 +9,7 @@ public class DoubleSynchronizedSingleton {
 
     private static DoubleSynchronizedSingleton instance=null;
 
-    public DoubleSynchronizedSingleton() {
+    private DoubleSynchronizedSingleton() {
     }
 
     public static DoubleSynchronizedSingleton getInstance(){

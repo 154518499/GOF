@@ -10,7 +10,7 @@ public class LazySingleton {
     //类初始化时，不初始化这个对象（延时加载，真正用的时候再创建）。
     private static LazySingleton instance;
 
-    public LazySingleton() {
+    private LazySingleton() {
     }
 
     //方法同步，调用效率低！
