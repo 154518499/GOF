@@ -6,9 +6,10 @@ package singleton;
  * @Description:
  */
 public class TestSingleton {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(LazySingleton.getInstance()==LazySingleton.getInstance());
         System.out.println(EnumSingleton.INSTANCE== EnumSingleton.INSTANCE);
         EnumSingleton.INSTANCE.singletonOperation();
+
     }
 }
