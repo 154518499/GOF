@@ -1,8 +1,6 @@
 package prototype;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.Date;
 
 /**
@@ -11,7 +9,7 @@ import java.util.Date;
  * @Description:
  */
 public class Test {
-    public static void main(String[] args) throws CloneNotSupportedException, IOException {
+    public static void main(String[] args) throws CloneNotSupportedException, IOException, ClassNotFoundException {
 
 //        Date date=new Date(123456789123l);
 //        Sheep2 s1=new Sheep2("hahah",date);
@@ -20,17 +18,28 @@ public class Test {
 //        date.setTime(234567891231l);
 //        System.out.println(s1.getBirthday());
 //        System.out.println(s2.getBirthday());
-       //序列化克隆
+        //序列化克隆
         Date date=new Date(123456789123l);
         Sheep s1=new Sheep("hahah",date);
         System.out.println(s1.getBirthday());
-        Sheep s2=(Sheep)s1.clone();
+        //序列化
+        ByteArrayOutputStream bos=new ByteArrayOutputStream(); //创建一个字节数组缓冲区
+        ObjectOutputStream oos=new ObjectOutputStream(bos);
+        oos.writeObject(s1);
+        byte[]bytes=bos.toByteArray();
+        //反序列化
+        ByteArrayInputStream bis=new ByteArrayInputStream(bytes);
+        ObjectInputStream ois=new ObjectInputStream(bis);
+        Sheep sheep2=(Sheep) ois.readObject();
+
+        System.out.println(sheep2.toString()+" ===to");
         date.setTime(234567891231l);
         System.out.println(s1.getBirthday());
-        System.out.println(s2.getBirthday());
+        System.out.println(sheep2.getBirthday());
+        //System.out.println(s2.getBirthday());
 
-        ByteArrayOutputStream bos=new ByteArrayOutputStream();
-        ObjectOutputStream oos=new ObjectOutputStream(bos);
+
+
 
     }
 

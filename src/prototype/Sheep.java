@@ -1,5 +1,6 @@
 package prototype;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Date;
  * @Date: 2018/11/19 15:44
  * @Description: 浅克隆
  */
-public class Sheep implements Cloneable{
+public class Sheep implements Cloneable,Serializable{
     private String name;
     private Date birthday;
 
