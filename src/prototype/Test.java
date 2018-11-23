@@ -36,7 +36,6 @@ public class Test {
         date.setTime(234567891231l);
         System.out.println(s1.getBirthday());
         System.out.println(sheep2.getBirthday());
-        //System.out.println(s2.getBirthday());
 
 
 
